@@ -15,5 +15,23 @@ namespace Medicus_V1._1.Controllers
             var movie = new Movie() { name = "Toy Story" };
             return View(movie);
         }
+
+        public ActionResult Edit(int moviesID)
+        {
+            return Content("id="+moviesID);
+        }
+
+        public ActionResult Index(int? pageIndex, string sortBy)
+        {
+            if (!pageIndex.HasValue)
+            {
+                pageIndex = 1;
+            }
+            if (String.IsNullOrWhiteSpace(sortBy))
+            {
+                sortBy = "name";
+            }
+            return Content(String.Format("pageindex={0},sortBy={1}", pageIndex, sortBy));
+        }
     }
 }
