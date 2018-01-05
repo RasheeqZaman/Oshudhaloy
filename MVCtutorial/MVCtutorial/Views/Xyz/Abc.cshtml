@@ -1,0 +1,11 @@
+﻿@model IEnumerable<MVCtutorial.Models.Student>
+
+@{
+    ViewBag.Title = "Abc";
+}
+
+
+@foreach (var item in Model)
+{
+    <h2>Hey @item.FirstName @item.LastName</h2>
+}
