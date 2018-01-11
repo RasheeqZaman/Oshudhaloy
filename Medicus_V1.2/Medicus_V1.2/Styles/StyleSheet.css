@@ -1,0 +1,42 @@
+﻿/*
+#container {
+    width: 100%;
+    height: 100%;
+}
+
+#main-content {
+    margin-left: 210px;
+}
+
+.sidebar-closed #main-content {
+    margin-left: 0px;
+}
+
+.wrapper {
+    display: inline-block;
+    margin-top: 60px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-top: 0px;
+    width: 100%;
+}
+
+.site-min-height {
+    min-height: 900px;
+}
+
+    */
+
+/*.header, .footer{
+    min-height:60px;
+    padding: 0 15px;
+}
+
+.header{
+    position:fixed;
+    left: 0;
+    right: 0;
+    z-index: 1002;
+}*/
+
