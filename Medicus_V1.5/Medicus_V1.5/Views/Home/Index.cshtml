@@ -24,28 +24,21 @@
 							<span class="li_cloud"></span>
 							<h3>+48</h3>
 						</div>
-						<p>48 New files were added in your cloud storage.</p>
+						<p>48 New Medicines were added in your Pharmacy.</p>
 					</div>
 					<div class="col-md-2 col-sm-2 box0">
 						<div class="box1">
 							<span class="li_stack"></span>
-							<h3>23</h3>
+							<h3>10.2K</h3>
 						</div>
-						<p>You have 23 unread messages in your inbox.</p>
+						<p>Todays Total Expense is 10,230 tk.</p>
 					</div>
 					<div class="col-md-2 col-sm-2 box0">
 						<div class="box1">
 							<span class="li_news"></span>
-							<h3>+10</h3>
+							<h3>4</h3>
 						</div>
-						<p>More than 10 news were added in your reader.</p>
-					</div>
-					<div class="col-md-2 col-sm-2 box0">
-						<div class="box1">
-							<span class="li_data"></span>
-							<h3>OK!</h3>
-						</div>
-						<p>Your server is working perfectly. Relax & enjoy.</p>
+						<p>4 Employees have their Salaries pending.</p>
 					</div>
 
 				</div><!-- /row mt -->
@@ -187,16 +180,14 @@
 				<div class="row mt">
 					<!--CUSTOM CHART START -->
 					<div class="border-head">
-						<h3>VISITS</h3>
+						<h3>REVENUE</h3>
 					</div>
 					<div class="custom-bar-chart">
 						<ul class="y-axis">
-							<li><span>10.000</span></li>
-							<li><span>8.000</span></li>
-							<li><span>6.000</span></li>
-							<li><span>4.000</span></li>
-							<li><span>2.000</span></li>
-							<li><span>0</span></li>
+							@for (int i=5; i>=0; i--)
+							{
+								<li><span>@(i*20) K</span></li>
+							}
 						</ul>
 						<div class="bar">
 							<div class="title">JAN</div>
@@ -248,7 +239,7 @@
 						<div class="details">
 							<p>
 								<muted>2 Minutes Ago</muted><br />
-								<a href="#">@temp.Email</a> liked your pharmacy.<br />
+								<a href="#">@temp.UserName</a> liked your pharmacy.<br />
 							</p>
 						</div>
 					</div>

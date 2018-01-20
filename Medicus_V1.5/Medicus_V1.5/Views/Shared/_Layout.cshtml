@@ -140,8 +140,11 @@
 					<p class="centered"><a href="profile.html"><img src="~/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
 					<h5 class="centered">Marcel Newman</h5>
 
-					@{  var side = new List<string> { "Dashboard", "Medicine", "All Sales", "Expences", "Staff" };
-						var subside = new List<List<string>> { new List<string> { }, new List<string> { "Medicine List", "Add Medicine", "Alert Stock List" }, new List<string> { }, new List<string> { "Order Medicine", "All Orders"}, new List<string> { } };
+					@{  var side = new List<string> { "Dashboard", "POS", "Medicine", "All Sales", "Expences", "Reporting", "Staff" };
+						var subside = new List<List<string>> { new List<string> { }, new List<string> { },
+							new List<string> { "Medicine List", "Add Medicine", "Alert Stock List" }, new List<string> { },
+							new List<string> { "Order Medicine", "All Orders"}, new List<string> { "Today's Report", "Sales Report", "Purchase Report"},
+							new List<string> { } };
 					}
 
 					@for (int j = 0; j < side.Count; j++)
