@@ -288,6 +288,13 @@
     <Content Include="Views\Home\General.cshtml" />
     <Content Include="Views\Home\ResponsiveTable.cshtml" />
     <Content Include="Views\Home\ToDoList.cshtml" />
+    <Content Include="Views\Home\AddMedicine.cshtml" />
+    <Content Include="Views\Home\AddSupplier.cshtml" />
+    <Content Include="Views\Home\ManageSupplier.cshtml" />
+    <Content Include="Views\Home\AddPurchase.cshtml" />
+    <Content Include="Views\Home\ManagePurchase.cshtml" />
+    <Content Include="Views\Home\ManageCategory.cshtml" />
+    <Content Include="Views\Home\AddCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -66,5 +66,34 @@ namespace Medicus_V1._5.Controllers
         {
             return View();
         }
+        public ActionResult AddMedicine()
+        {
+            return View();
+        }
+        public ActionResult AddSupplier()
+        {
+            return View();
+        }
+        public ActionResult ManageSupplier()
+        {
+            return View();
+        }
+        public ActionResult AddPurchase()
+        {
+            return View();
+        }
+        public ActionResult ManagePurchase()
+        {
+            return View();
+        }
+        public ActionResult ManageCategory()
+        {
+            return View();
+        }
+        public ActionResult AddCategory()
+        {
+            return View();
+        }
+        
     }
 }
