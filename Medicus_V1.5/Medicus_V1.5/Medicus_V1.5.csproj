@@ -175,6 +175,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\CustomerOrder.cs" />
     <Compile Include="Models\Customers.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\HomeIndexViewData.cs" />
@@ -303,6 +304,7 @@
     <Content Include="Views\Home\TodayReport.cshtml" />
     <Content Include="Views\Home\SalesReport.cshtml" />
     <Content Include="Views\Home\PurchaseReport.cshtml" />
+    <Content Include="Views\Home\Supplier.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

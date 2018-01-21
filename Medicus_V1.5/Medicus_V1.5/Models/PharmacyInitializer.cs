@@ -115,21 +115,58 @@ namespace Medicus_V1._5.Models
             }
             context.SaveChanges();
 
+            var customerOrderList = new List<CustomerOrder>
+            {
+                new CustomerOrder {CustomerId = 1, EmployeeId = 3, MedicineId = 2, Quantity = 10, OrderDate = DateTime.Parse("2017-02-20")},
+                new CustomerOrder {CustomerId = 2, EmployeeId = 1, MedicineId = 3, Quantity = 50, OrderDate = DateTime.Parse("2017-06-20")},
+                new CustomerOrder {CustomerId = 3, EmployeeId = 1, MedicineId = 2, Quantity = 10, OrderDate = DateTime.Parse("2017-02-20")},
+                new CustomerOrder {CustomerId = 2, EmployeeId = 2, MedicineId = 5, Quantity = 50, OrderDate = DateTime.Parse("2017-07-20")},
+                new CustomerOrder {CustomerId = 3, EmployeeId = 4, MedicineId = 5, Quantity = 70, OrderDate = DateTime.Parse("2017-02-20")},
+                new CustomerOrder {CustomerId = 2, EmployeeId = 3, MedicineId = 5, Quantity = 15, OrderDate = DateTime.Parse("2017-06-28")},
+                new CustomerOrder {CustomerId = 4, EmployeeId = 1, MedicineId = 4, Quantity = 25, OrderDate = DateTime.Parse("2017-02-20")},
+                new CustomerOrder {CustomerId = 4, EmployeeId = 3, MedicineId = 2, Quantity = 25, OrderDate = DateTime.Parse("2017-02-22")},
+                new CustomerOrder {CustomerId = 5, EmployeeId = 3, MedicineId = 2, Quantity = 35, OrderDate = DateTime.Parse("2017-02-25")},
+                new CustomerOrder {CustomerId = 5, EmployeeId = 5, MedicineId = 1, Quantity = 20, OrderDate = DateTime.Parse("2017-06-21")},
+                new CustomerOrder {CustomerId = 1, EmployeeId = 3, MedicineId = 2, Quantity = 20, OrderDate = DateTime.Parse("2017-03-10")},
+            };
+            foreach (var temp in customerOrderList)
+            {
+                context.CustomerOrderTable.Add(temp);
+            }
+            context.SaveChanges();
+
             var pharmacyReceiveList = new List<Pharmacy_Received>
             {
-                new Pharmacy_Received {Pharmacy_OrderId = 1, ReceiveDate = DateTime.Parse("2018-06-25")},
-                new Pharmacy_Received {Pharmacy_OrderId = 2, ReceiveDate = DateTime.Parse("2018-06-25")},
-                new Pharmacy_Received {Pharmacy_OrderId = 3, ReceiveDate = DateTime.Parse("2018-06-25")},
-                new Pharmacy_Received {Pharmacy_OrderId = 4, ReceiveDate = DateTime.Parse("2018-06-25")},
-                new Pharmacy_Received {Pharmacy_OrderId = 5, ReceiveDate = DateTime.Parse("2018-06-25")},
-                new Pharmacy_Received {Pharmacy_OrderId = 6, ReceiveDate = DateTime.Parse("2018-06-25")},
-                new Pharmacy_Received {Pharmacy_OrderId = 9, ReceiveDate = DateTime.Parse("2018-06-25")}
+                new Pharmacy_Received {Pharmacy_OrderId = 1, ReceiveDate = DateTime.Parse("2018-06-25"), ExpireDate = DateTime.Parse("2018-09-25")},
+                new Pharmacy_Received {Pharmacy_OrderId = 2, ReceiveDate = DateTime.Parse("2018-06-25"), ExpireDate = DateTime.Parse("2018-10-25")},
+                new Pharmacy_Received {Pharmacy_OrderId = 3, ReceiveDate = DateTime.Parse("2018-06-25"), ExpireDate = DateTime.Parse("2018-12-25")},
+                new Pharmacy_Received {Pharmacy_OrderId = 4, ReceiveDate = DateTime.Parse("2018-06-25"), ExpireDate = DateTime.Parse("2018-11-25")},
+                new Pharmacy_Received {Pharmacy_OrderId = 5, ReceiveDate = DateTime.Parse("2018-06-25"), ExpireDate = DateTime.Parse("2018-07-25")},
+                new Pharmacy_Received {Pharmacy_OrderId = 6, ReceiveDate = DateTime.Parse("2018-04-25"), ExpireDate = DateTime.Parse("2018-09-25")},
+                new Pharmacy_Received {Pharmacy_OrderId = 9, ReceiveDate = DateTime.Parse("2018-05-25"), ExpireDate = DateTime.Parse("2018-09-25")}
             };
             foreach (var temp in pharmacyReceiveList)
             {
                 context.PharmacyReceiveTable.Add(temp);
             }
             context.SaveChanges();
+
+            var pharmacySoldList = new List<PharmacySold>
+            {
+                new PharmacySold {Customer_OrderId = 1, ReceiveDate = DateTime.Parse("2018-06-25")},
+                new PharmacySold {Customer_OrderId = 2, ReceiveDate = DateTime.Parse("2018-06-25")},
+                new PharmacySold {Customer_OrderId = 3, ReceiveDate = DateTime.Parse("2018-06-25")},
+                new PharmacySold {Customer_OrderId = 4, ReceiveDate = DateTime.Parse("2018-06-25")},
+                new PharmacySold {Customer_OrderId = 5, ReceiveDate = DateTime.Parse("2018-06-25")},
+                new PharmacySold {Customer_OrderId = 6, ReceiveDate = DateTime.Parse("2018-04-25")},
+                new PharmacySold {Customer_OrderId = 9, ReceiveDate = DateTime.Parse("2018-05-25")}
+            };
+            foreach (var temp in pharmacySoldList)
+            {
+                context.PharmacySoldTable.Add(temp);
+            }
+            context.SaveChanges();
+
         }
     }
 }
