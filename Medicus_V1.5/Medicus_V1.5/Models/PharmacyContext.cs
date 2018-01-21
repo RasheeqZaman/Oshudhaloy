@@ -11,5 +11,10 @@ namespace Medicus_V1._5.Models
         public DbSet<Customers> CustomerTable { get; set; }
         public DbSet<Employee> EmployeeTable { get; set; }
         public DbSet<Pharmacy> PharmacyTable { get; set; }
+        public DbSet<Admin> AdminTable { get; set; }
+        public DbSet<Medicine> MedicineTable { get; set; }
+        public DbSet<Supplier> SupplierTable { get; set; }
+        public DbSet<Pharmacy_Order> PharmacyOrderTable { get; set; }
+        public DbSet<Pharmacy_Received> PharmacyReceiveTable { get; set; }
     }
 }

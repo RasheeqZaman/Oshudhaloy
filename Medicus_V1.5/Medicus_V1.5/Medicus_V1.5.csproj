@@ -174,15 +174,19 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Customers.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\HomeIndexViewData.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Medicine.cs" />
+    <Compile Include="Models\Pharmacy Order.cs" />
+    <Compile Include="Models\Pharmacy Received.cs" />
     <Compile Include="Models\Pharmacy.cs" />
     <Compile Include="Models\PharmacyContext.cs" />
     <Compile Include="Models\PharmacyInitializer.cs" />
+    <Compile Include="Models\Supplier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -206,6 +210,7 @@
     <Content Include="img\login-bg.jpg" />
     <Content Include="img\lorde.jpg" />
     <Content Include="img\mask.png" />
+    <Content Include="img\medical.png" />
     <Content Include="img\ny.jpg" />
     <Content Include="img\product.jpg" />
     <Content Include="img\product.png" />
@@ -288,6 +293,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\POS.cshtml" />
+    <Content Include="Views\Home\AllSales.cshtml" />
+    <Content Include="Views\Home\Staff.cshtml" />
+    <Content Include="Views\Home\MedicineList.cshtml" />
+    <Content Include="Views\Home\AlertStockList.cshtml" />
+    <Content Include="Views\Home\OrderMedicine.cshtml" />
+    <Content Include="Views\Home\AllOrder.cshtml" />
+    <Content Include="Views\Home\TodayReport.cshtml" />
+    <Content Include="Views\Home\SalesReport.cshtml" />
+    <Content Include="Views\Home\PurchaseReport.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
