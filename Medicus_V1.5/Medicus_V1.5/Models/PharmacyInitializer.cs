@@ -116,6 +116,7 @@ namespace Medicus_V1._5.Models
             context.SaveChanges();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             var pharmacyReceiveList = new List<Pharmacy_Received>
             {
                 new Pharmacy_Received {Pharmacy_OrderId = 1, ReceiveDate = DateTime.Parse("2018-06-25")},
@@ -126,6 +127,8 @@ namespace Medicus_V1._5.Models
                 new Pharmacy_Received {Pharmacy_OrderId = 6, ReceiveDate = DateTime.Parse("2018-06-25")},
                 new Pharmacy_Received {Pharmacy_OrderId = 9, ReceiveDate = DateTime.Parse("2018-06-25")}
 =======
+=======
+>>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
             var customerOrderList = new List<CustomerOrder>
             {
                 new CustomerOrder {CustomerId = 1, EmployeeId = 3, MedicineId = 2, Quantity = 10, OrderDate = DateTime.Parse("2017-02-20")},
@@ -155,6 +158,9 @@ namespace Medicus_V1._5.Models
                 new Pharmacy_Received {Pharmacy_OrderId = 5, ReceiveDate = DateTime.Parse("2018-06-25"), ExpireDate = DateTime.Parse("2018-07-25")},
                 new Pharmacy_Received {Pharmacy_OrderId = 6, ReceiveDate = DateTime.Parse("2018-04-25"), ExpireDate = DateTime.Parse("2018-09-25")},
                 new Pharmacy_Received {Pharmacy_OrderId = 9, ReceiveDate = DateTime.Parse("2018-05-25"), ExpireDate = DateTime.Parse("2018-09-25")}
+<<<<<<< HEAD
+>>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
+=======
 >>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
             };
             foreach (var temp in pharmacyReceiveList)
@@ -163,7 +169,10 @@ namespace Medicus_V1._5.Models
             }
             context.SaveChanges();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
 
             var pharmacySoldList = new List<PharmacySold>
             {
@@ -181,6 +190,9 @@ namespace Medicus_V1._5.Models
             }
             context.SaveChanges();
 
+<<<<<<< HEAD
+>>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
+=======
 >>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
         }
     }

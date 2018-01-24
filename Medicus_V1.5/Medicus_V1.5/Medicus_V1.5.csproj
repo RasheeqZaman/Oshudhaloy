@@ -176,6 +176,10 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    <Compile Include="Models\CustomerOrder.cs" />
+>>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
 =======
     <Compile Include="Models\CustomerOrder.cs" />
 >>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
@@ -192,6 +196,10 @@
     <Compile Include="Models\PharmacyContext.cs" />
     <Compile Include="Models\PharmacyInitializer.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    <Compile Include="Models\PharmacySold.cs" />
+>>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
 =======
     <Compile Include="Models\PharmacySold.cs" />
 >>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
@@ -313,6 +321,10 @@
     <Content Include="Views\Home\SalesReport.cshtml" />
     <Content Include="Views\Home\PurchaseReport.cshtml" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    <Content Include="Views\Home\Supplier.cshtml" />
+>>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
 =======
     <Content Include="Views\Home\Supplier.cshtml" />
 >>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30

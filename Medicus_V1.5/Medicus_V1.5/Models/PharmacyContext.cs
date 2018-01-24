@@ -16,7 +16,13 @@ namespace Medicus_V1._5.Models
         public DbSet<Supplier> SupplierTable { get; set; }
         public DbSet<Pharmacy_Order> PharmacyOrderTable { get; set; }
 <<<<<<< HEAD
+<<<<<<< HEAD
         public DbSet<Pharmacy_Received> PharmacyReceiveTable { get; set; }
+=======
+        public DbSet<CustomerOrder> CustomerOrderTable { get; set; }
+        public DbSet<Pharmacy_Received> PharmacyReceiveTable { get; set; }
+        public DbSet<PharmacySold> PharmacySoldTable { get; set; }
+>>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
 =======
         public DbSet<CustomerOrder> CustomerOrderTable { get; set; }
         public DbSet<Pharmacy_Received> PharmacyReceiveTable { get; set; }
