@@ -138,29 +138,55 @@
 				<ul class="sidebar-menu" id="nav-accordion">
 
 					<p class="centered"><a href="profile.html"><img src="~/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-					<h5 class="centered">Marcel Newman</h5>
+					<h5 class="centered">Nahid Pranto</h5>
 
-					@{  var side = new List<string> { "Dashboard", "POS", "Medicine", "All Sales", "Expences", "Reporting", "Staff" };
+					@{  var side = new List<string> { "Dashboard", "POS", "Medicine", "All Sales", "Expences", "Reporting", "Staff", "Supplier" };
 						var subside = new List<List<string>> { new List<string> { }, new List<string> { },
-							new List<string> { "Medicine List", "Add Medicine", "Alert Stock List" }, new List<string> { },
+							new List<string> { "Medicine List", "Alert Stock List" }, new List<string> { },
 							new List<string> { "Order Medicine", "All Orders"}, new List<string> { "Today's Report", "Sales Report", "Purchase Report"},
+<<<<<<< HEAD
 							new List<string> { } };
+						var side_link = new List<string> { "Index", "POS", "", "AllSales", "", "", "Staff" };
+						var subside_link = new List<List<string>> { new List<string> { }, new List<string> { },
+							new List<string> { "MedicineList", "AlertStockList" }, new List<string> { },
+							new List<string> { "OrderMedicine", "AllOrders"}, new List<string> { "TodayReport", "SalesReport", "PurchaseReport"},
+							new List<string> { } };
+=======
+							new List<string> { }, new List<string> { } };
+						var side_link = new List<string> { "Index", "POS", "", "AllSales", "", "", "Staff", "Supplier" };
+						var subside_link = new List<List<string>> { new List<string> { }, new List<string> { },
+							new List<string> { "MedicineList", "AlertStockList" }, new List<string> { },
+							new List<string> { "OrderMedicine", "AllOrder"}, new List<string> { "TodayReport", "SalesReport", "PurchaseReport"},
+							new List<string> { } , new List<string> { } };
+>>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
 					}
 
 					@for (int j = 0; j < side.Count; j++)
 					{
-						<li class="sub-menu">
-							<a href="javascript:;">
-								<i class="fa fa-desktop"></i>
-								<span>@side[j]</span>
-							</a>
-							<ul class="sub">
-								@foreach (var i in subside[j])
-								{
-									<li><a href="general.html">@i</a></li>
-								}
-							</ul>
-						</li>
+						if (subside[j].Any())
+						{
+							<li class="sub-menu">
+								<a href="javascript:;">
+									<i class="fa fa-desktop"></i>
+									<span>@side[j]</span>
+								</a>
+								<ul class="sub">
+									@for(var i= 0; i<subside[j].Count; i++)
+									{
+										<li><a href="@Url.Action(subside_link[j][i], "Home")">@subside[j][i]</a></li>
+									}
+								</ul>
+							</li>
+						}
+						else
+						{
+							<li class="mt">
+								<a href="@Url.Action(side_link[j], "Home")">
+									<i class="fa fa-dashboard"></i>
+									<span>@side[j]</span>
+								</a>
+							</li>
+						}
 					}
 				</ul>
 				<!-- sidebar menu end-->
