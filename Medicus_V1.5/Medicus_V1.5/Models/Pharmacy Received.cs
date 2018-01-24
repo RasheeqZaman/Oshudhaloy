@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Medicus_V1._5.Models
 {
-    public class PharmacySoldPharmacy_Received
+    public class Pharmacy_Received
     {
         [Key]
         public int Pharmacy_OrderId { get; set; }
