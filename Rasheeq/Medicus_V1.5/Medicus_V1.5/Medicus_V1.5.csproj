@@ -175,7 +175,14 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin.cs" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
     <Compile Include="Models\CustomerOrder.cs" />
+>>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
+=======
+    <Compile Include="Models\CustomerOrder.cs" />
+>>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
     <Compile Include="Models\Customers.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="ViewData\HomeIndexViewData.cs" />
@@ -188,7 +195,14 @@
     <Compile Include="Models\Pharmacy.cs" />
     <Compile Include="Models\PharmacyContext.cs" />
     <Compile Include="Models\PharmacyInitializer.cs" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
     <Compile Include="Models\PharmacySold.cs" />
+>>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
+=======
+    <Compile Include="Models\PharmacySold.cs" />
+>>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -306,7 +320,14 @@
     <Content Include="Views\Home\TodayReport.cshtml" />
     <Content Include="Views\Home\SalesReport.cshtml" />
     <Content Include="Views\Home\PurchaseReport.cshtml" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
     <Content Include="Views\Home\Supplier.cshtml" />
+>>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
+=======
+    <Content Include="Views\Home\Supplier.cshtml" />
+>>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

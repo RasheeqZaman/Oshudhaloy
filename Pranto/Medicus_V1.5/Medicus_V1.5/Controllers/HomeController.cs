@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Medicus_V1._5.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,14 @@ namespace Medicus_V1._5.Controllers
 {
     public class HomeController : Controller
     {
+        private PharmacyContext db = new PharmacyContext();
         public ActionResult Index()
         {
-            return View();
+            var data = new HomeIndexViewData();
+            data.customersList = db.CustomerTable.ToList();
+            data.employeeList = db.EmployeeTable.SqlQuery("select * from Employees where pharmacyid = 2").ToList();
+            data.pharmacyList = db.PharmacyTable.ToList();
+            return View(data);
         }
 
         public ActionResult About()
@@ -26,74 +32,9 @@ namespace Medicus_V1._5.Controllers
 
             return View();
         }
-        public ActionResult Table()
-        {
-            return View();
-        }
-        public ActionResult Button()
-        {
-            return View();
-        }
-        public ActionResult Chart()
-        {
-            return View();
-        }
-        public ActionResult Calender()
-        {
-            return View();
-        }
-        public ActionResult Form()
-        {
-            return View();
-        }
-        public ActionResult Gallery()
-        {
-            return View();
-        }
-        public ActionResult Panel()
-        {
-            return View();
-        }
-        public ActionResult General()
-        {
-            return View();
-        }
-        public ActionResult ToDoList()
-        {
-            return View();
-        }
-        public ActionResult ResponsiveTable()
-        {
-            return View();
-        }
         public ActionResult AddMedicine()
         {
             return View();
         }
-        public ActionResult AddSupplier()
-        {
-            return View();
-        }
-        public ActionResult ManageSupplier()
-        {
-            return View();
-        }
-        public ActionResult AddPurchase()
-        {
-            return View();
-        }
-        public ActionResult ManagePurchase()
-        {
-            return View();
-        }
-        public ActionResult ManageCategory()
-        {
-            return View();
-        }
-        public ActionResult AddCategory()
-        {
-            return View();
-        }
-        
     }
 }
