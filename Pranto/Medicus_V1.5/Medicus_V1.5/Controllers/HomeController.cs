@@ -36,5 +36,9 @@ namespace Medicus_V1._5.Controllers
         {
             return View();
         }
+        public ActionResult OrdertoSupplier()
+        {
+            return View();
+        }
     }
 }
