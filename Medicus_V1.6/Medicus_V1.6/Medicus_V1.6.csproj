@@ -173,9 +173,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ModelData\HomeIndexViewData.cs" />
+    <Compile Include="ModelData\HomeMediListViewData.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\CustomerOrder.cs" />
+    <Compile Include="Models\Customers.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Medicine.cs" />
+    <Compile Include="Models\Pharmacy Order.cs" />
+    <Compile Include="Models\Pharmacy Received.cs" />
+    <Compile Include="Models\Pharmacy.cs" />
+    <Compile Include="Models\PharmacyContext.cs" />
+    <Compile Include="Models\PharmacyInitializer.cs" />
+    <Compile Include="Models\PharmacySold.cs" />
+    <Compile Include="Models\Supplier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

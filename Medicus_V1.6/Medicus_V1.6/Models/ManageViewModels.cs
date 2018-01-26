@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace Medicus_V1._6.Models
+namespace Medicus_V1._5.Models
 {
     public class IndexViewModel
     {
