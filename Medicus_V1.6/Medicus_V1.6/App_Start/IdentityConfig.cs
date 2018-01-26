@@ -10,7 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using Medicus_V1._6.Models;
+using Medicus_V1._5.Models;
 
 namespace Medicus_V1._6
 {

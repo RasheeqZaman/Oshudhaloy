@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Medicus_V1._6.Models
+namespace Medicus_V1._5.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
