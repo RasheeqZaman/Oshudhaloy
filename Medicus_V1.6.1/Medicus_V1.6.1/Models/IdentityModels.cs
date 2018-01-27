@@ -21,7 +21,7 @@ namespace Medicus_V1._6._1.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("PharmacyContext", throwIfV1Schema: false)
         {
         }
 
