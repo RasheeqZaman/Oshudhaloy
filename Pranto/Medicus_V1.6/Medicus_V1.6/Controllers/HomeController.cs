@@ -34,5 +34,13 @@ namespace Medicus_V1._6.Controllers
         {
             return View();
         }
+        public ActionResult HomePage()
+        {
+            return View();
+        }
+        public ActionResult CustomerDash()
+        {
+            return View();
+        }
     }
 }
