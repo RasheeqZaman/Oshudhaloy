@@ -1964,6 +1964,43 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
       this.$element.offset({ top: document.body.offsetHeight - offsetBottom - this.$element.height() })
     }
   }
+  var ctxB = document.getElementById("bar").getContext('2d');
+  var myBarChart = new Chart(ctxB, {
+      type: 'bar',
+      data: {
+          labels: ["December","January", "February", "March", "April", "May"],
+          datasets: [{
+              label: 'Total Revenue in K',
+              data: [21, 19, 15, 15, 17, 18, 11],
+              backgroundColor: [
+                  'rgba(25, 25, 25, 1)',
+                  'rgba(38, 38, 38, 1)',
+                  'rgba(51, 51, 51, 1)',
+                  'rgba(63, 63, 63, 1)',
+                  'rgba(76, 76, 76, 1)',
+                  'rgba(89, 89, 89, 1)'
+              ],
+              borderColor: [
+                  'rgba(25, 25, 25, 1)',
+                  'rgba(38, 38, 38, 1)',
+                  'rgba(51, 51, 51, 1)',
+                  'rgba(63, 63, 63, 1)',
+                  'rgba(76, 76, 76, 1)',
+                  'rgba(89, 89, 89, 1)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      optionss: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }]
+          }
+      }
+  });
 
 
   // AFFIX PLUGIN DEFINITION

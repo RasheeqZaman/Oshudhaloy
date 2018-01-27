@@ -42,5 +42,13 @@ namespace Medicus_V1._6.Controllers
         {
             return View();
         }
+        public ActionResult SideNavBar()
+        {
+            return View();
+        }
+        public ActionResult AdminDash()
+        {
+            return View();
+        }
     }
 }
