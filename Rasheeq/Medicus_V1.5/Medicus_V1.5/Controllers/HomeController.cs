@@ -17,19 +17,13 @@ namespace Medicus_V1._5.Controllers
             var data = new HomeIndexViewData();
             int checkAdminDashBoard = 2;
             data.customersList = db.CustomerTable.ToList();
-<<<<<<< HEAD
-<<<<<<< HEAD
             data.totalMedicine = db.Database.SqlQuery<int>("select sum(quantity) from pharmacy_order inner join pharmacy_received on pharmacy_order.pharmacy_orderid = pharmacy_received.pharmacy_orderid where pharmacy_order.adminid = "+checkAdminDashBoard.ToString()).First();
-=======
             data.totalRevenue = db.Database.SqlQuery<int>("select sum(customerorders.quantity*medicines.sellprice) from customerorders inner join pharmacysolds on customerorders.customerorderid = pharmacysolds.customer_orderid inner join medicines on medicines.medicineid = customerorders.medicineid where customerorders.employeeid = " + checkAdminDashBoard.ToString()).First();
             data.totalMedicine = db.Database.SqlQuery<int>("select sum(quantity) from pharmacy_order inner join pharmacy_received on pharmacy_order.pharmacy_orderid = pharmacy_received.pharmacy_orderid where pharmacy_order.adminid = "+checkAdminDashBoard.ToString()).First();
             data.totalExpenses = db.Database.SqlQuery<int>("select sum(pharmacy_order.quantity*medicines.supplierprice) from pharmacy_order inner join pharmacy_received on pharmacy_order.pharmacy_orderid = pharmacy_received.pharmacy_orderid inner join medicines on medicines.medicineid = pharmacy_order.medicineid where pharmacy_order.adminid = " + checkAdminDashBoard.ToString()).First();
->>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
-=======
             data.totalRevenue = db.Database.SqlQuery<int>("select sum(customerorders.quantity*medicines.sellprice) from customerorders inner join pharmacysolds on customerorders.customerorderid = pharmacysolds.customer_orderid inner join medicines on medicines.medicineid = customerorders.medicineid where customerorders.employeeid = " + checkAdminDashBoard.ToString()).First();
             data.totalMedicine = db.Database.SqlQuery<int>("select sum(quantity) from pharmacy_order inner join pharmacy_received on pharmacy_order.pharmacy_orderid = pharmacy_received.pharmacy_orderid where pharmacy_order.adminid = "+checkAdminDashBoard.ToString()).First();
             data.totalExpenses = db.Database.SqlQuery<int>("select sum(pharmacy_order.quantity*medicines.supplierprice) from pharmacy_order inner join pharmacy_received on pharmacy_order.pharmacy_orderid = pharmacy_received.pharmacy_orderid inner join medicines on medicines.medicineid = pharmacy_order.medicineid where pharmacy_order.adminid = " + checkAdminDashBoard.ToString()).First();
->>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
             data.employeeList = db.EmployeeTable.SqlQuery("select * from Employees where pharmacyid = 2").ToList();
             data.pharmacyList = db.PharmacyTable.ToList();
             return View(data);
@@ -62,15 +56,10 @@ namespace Medicus_V1._5.Controllers
         {
             return View();
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
         public ActionResult MedicineList()
         {
             return View();
         }
-=======
-=======
->>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
         public ActionResult Supplier()
         {
             return View();
@@ -81,10 +70,6 @@ namespace Medicus_V1._5.Controllers
             data.medicineList = db.MedicineTable.ToList();
             return View(data);
         }
-<<<<<<< HEAD
->>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
-=======
->>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
         public ActionResult AlertStockList()
         {
             return View();
@@ -93,12 +78,6 @@ namespace Medicus_V1._5.Controllers
         {
             return View();
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
-
         [HttpPost]
         public ActionResult OrderMedicine(Medicine medicine)
         {
@@ -120,11 +99,6 @@ namespace Medicus_V1._5.Controllers
 
             return View(medicine);
         }
-
-<<<<<<< HEAD
->>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
-=======
->>>>>>> 048521e896725079f375d4c2ff13e56bbc940e30
         public ActionResult AllOrder()
         {
             return View();
