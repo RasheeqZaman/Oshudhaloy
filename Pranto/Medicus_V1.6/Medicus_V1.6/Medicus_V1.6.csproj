@@ -258,6 +258,11 @@
     <Content Include="Views\Home\CustomerDash.cshtml" />
     <Content Include="Views\Home\AdminDash.cshtml" />
     <Content Include="Views\Home\POS.cshtml" />
+    <Content Include="Views\Home\SupplierList.cshtml" />
+    <Content Include="Views\Home\CustomerList.cshtml" />
+    <Content Include="Views\Home\AddSupplier.cshtml" />
+    <Content Include="Views\Home\AddPurchase.cshtml" />
+    <Content Include="Views\Home\PurchaseList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
