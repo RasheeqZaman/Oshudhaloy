@@ -28,8 +28,15 @@ namespace Medicus_V1._6._1.Controllers
             return View();
         }
 
+
+
+        public ActionResult CustomRegisterCustomer()
+        {
+            return View();
+        }
+
         [HttpPost]
-        public ActionResult CustomRegister(CustomRegisterViewModel viewModel)
+        public ActionResult CustomRegisterCustomer(CustomRegisterViewModel viewModel)
         {
 
             if (ModelState.IsValid)
@@ -41,6 +48,40 @@ namespace Medicus_V1._6._1.Controllers
                     Password = viewModel.Password,
                     Address = viewModel.Address,
                     PhoneNumber = viewModel.PhoneNumber
+                });
+                db.SaveChanges();
+            }
+
+            return View(viewModel);
+        }
+        public ActionResult CustomRegisterAdmin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CustomRegisterAdmin(CustomRegisterViewModel viewModel)
+        {
+
+            if (ModelState.IsValid)
+            {
+                Pharmacy p = new Pharmacy
+                {
+                    Name = viewModel.PharmacyName,
+                    Address = viewModel.PharmacyAddress,
+                    PhoneNumber = viewModel.PharmacyPhoneNumber
+                };
+                db.PharmacyTable.Add(p);
+                db.SaveChanges();
+
+                db.AdminTable.Add(new Admin
+                {
+                    UserName = viewModel.UserName,
+                    Email = viewModel.Email,
+                    Password = viewModel.Password,
+                    Address = viewModel.Address,
+                    PhoneNumber = viewModel.PhoneNumber,
+                    PharmacyId = p.PharmacyId
                 });
                 db.SaveChanges();
             }
@@ -62,5 +103,7 @@ namespace Medicus_V1._6._1.Controllers
 
             return View(viewModel);
         }
+
+
     }
 }

@@ -223,6 +223,7 @@
     <Content Include="Scripts\jquery-ui-1.9.2.custom.min.js" />
     <Content Include="Scripts\jquery.dcjqaccordion.2.7.js" />
     <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.nicescroll.js" />
     <Content Include="Scripts\jquery.scrollTo.min.js" />
     <Content Include="Scripts\jquery.ui.touch-punch.min.js" />
@@ -270,6 +271,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\CustomAccount\CustomRegister.cshtml" />
     <Content Include="Views\CustomAccount\CustomLogin.cshtml" />
+    <Content Include="Views\CustomAccount\CustomRegisterCustomer.cshtml" />
+    <Content Include="Views\CustomAccount\CustomRegisterAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

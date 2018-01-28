@@ -38,5 +38,18 @@ namespace Medicus_V1._6._1.Models
         [Required]
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
+
+        [Required]
+        [Display(Name = "Pharmacy Name")]
+        public string PharmacyName { get; set; }
+
+        [Required]
+        [Display(Name = "Pharmacy Address")]
+        public string PharmacyAddress { get; set; }
+
+
+        [Required]
+        [Display(Name = "Pharmacy Phone Number")]
+        public string PharmacyPhoneNumber { get; set; }
     }
 }
