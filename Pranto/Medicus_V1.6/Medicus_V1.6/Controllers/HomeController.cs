@@ -50,5 +50,10 @@ namespace Medicus_V1._6.Controllers
         {
             return View();
         }
+        public ActionResult POS()
+        {
+            return View();
+        }
+
     }
 }
