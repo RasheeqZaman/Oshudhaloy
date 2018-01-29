@@ -5,3 +5,58 @@
 
 <h2>AllOrders</h2>
 
+
+@{
+    ViewBag.Title = "CustomerList";
+}
+<section id="main-content">
+    <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i> Manage Supplier</h3>
+        <div class="upper-table">
+
+            <button type="button" class="btn btn-round"><i class="fa fa-edit"></i> Edit Customer</button>
+            <div class="table-search">
+                <input type="text" class="input-holder" placeholder="Search Customer">
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="content-panel">
+                <table class="table table-striped table-hover">
+                    <h4><i class="fa fa-angle-right"></i> Customer List</h4>
+                    <thead>
+                        <tr>
+                            <th><i class="fa fa-sort-amount-asc" aria-hidden="true"></i> Serial</th>
+                            <th><i class="fa fa-sort-amount-asc" aria-hidden="true"></i> Customer Name</th>
+                            <th><i class="fa fa-sort-amount-asc" aria-hidden="true"></i> Address</th>
+                            <th><i class="fa fa-sort-amount-asc" aria-hidden="true"></i> Email</th>
+                            <th>Action</th>
+
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+                            <td>1</td>
+
+                            <td>Suppodil</td>
+                            <td>Sup_120</td>
+                            <td>Renita</td>
+                            <td>80.00</td>
+                            <td>
+                                <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
+                                <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</section>
+
