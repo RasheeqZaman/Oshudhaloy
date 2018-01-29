@@ -64,7 +64,9 @@ namespace Medicus_V1._6._1.Controllers
         }
         public ActionResult Staff()
         {
-            return View();
+            EmployeeViewData data = new EmployeeViewData();
+            data.employeeList = db.EmployeeTable.SqlQuery("select * from employees").ToList();
+            return View(data);
         }
     }
 }

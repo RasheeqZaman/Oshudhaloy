@@ -199,6 +199,7 @@
     <Compile Include="ViewData\CustomerMedicineViewData.cs" />
     <Compile Include="ViewData\CustomerOrderMedicineViewData.cs" />
     <Compile Include="ViewData\CustomerOrders.cs" />
+    <Compile Include="ViewData\EmployeeViewData.cs" />
     <Compile Include="ViewData\HomeIndexViewData.cs" />
     <Compile Include="ViewData\PharmacyMedicineViewData.cs" />
   </ItemGroup>

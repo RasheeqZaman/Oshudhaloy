@@ -52,7 +52,7 @@ namespace Medicus_V1._6._1.Controllers
             data.medicineList = db. MedicineTable.SqlQuery("select * from medicines").ToList();
             return View(data);
         }
-        public ActionResult AllOrder()
+        public ActionResult AllOrders()
         {
             AllOrderCustomerViewData data = new AllOrderCustomerViewData();
             
@@ -67,10 +67,7 @@ namespace Medicus_V1._6._1.Controllers
         {
             return View();
         }
-        public ActionResult AllOrders()
-        {
-            return View();
-        }
+        
 
     }
 }
