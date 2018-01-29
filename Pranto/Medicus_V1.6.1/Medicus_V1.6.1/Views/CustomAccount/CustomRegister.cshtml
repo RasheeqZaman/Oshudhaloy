@@ -1,0 +1,16 @@
+﻿@model Medicus_V1._6._1.Models.CustomRegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+
+<div class="showback">
+    <button type="button" class="btn btn-primary btn-lg btn-block" onclick="location.href='@Url.Action("CustomRegisterCustomer", "CustomAccount")';">Register as Customer</button>
+    <button type="button" class="btn btn-default btn-lg btn-block" onclick="location.href='@Url.Action("CustomRegisterAdmin", "CustomAccount")';">Register as Admin</button>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

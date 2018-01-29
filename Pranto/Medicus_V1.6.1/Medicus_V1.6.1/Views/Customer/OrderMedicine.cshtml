@@ -1,0 +1,70 @@
+﻿@model Medicus_V1._6._1.ViewData.CustomerOrderMedicineViewData
+@{
+    ViewBag.Title = "Customer Order Medicine";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="content-panel">
+                <h3><i class="fa fa-angle-right"></i> Add Puschase</h3>
+                <hr>
+                @using (Html.BeginForm("OrderMedicine", "Customer", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.medicineId, new { @class = "col-sm-2" })
+                        <div class="col-sm-4">
+                            <input class="form-control form-round" id="medicineId" name="medicineId" type="text" list="hosting-plan" />
+                            <datalist id="hosting-plan">
+                                @foreach (var i in Model.medicineList)
+                                {
+                                    <option value=@(i.MedicineId)>@(i.Name)</option>
+                                }
+                            </datalist>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.pharmacyId, new { @class = "col-sm-2" })
+                        <div class="col-sm-4">
+                            <input class="form-control form-round" id="pharmacyId" name="pharmacyId" type="text" list="hosting-plan-2" />
+                            <datalist id="hosting-plan-2">
+                                @foreach (var i in Model.pharmacyList)
+                                {
+                                    <option value=@(i.PharmacyId)>@(i.Name)</option>
+                                }
+                            </datalist>
+                        </div>
+                        @Html.LabelFor(m => m.quantity, new { @class = "col-sm-2" })
+                        <div class="col-sm-4">
+                            <input class="form-control form-round" id="quantity" name="quantity" type="text" />
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-round btn-theme btn-primary">Save</button>
+                        <button type="button" class="btn btn-round btn-theme btn-success">Save And Add Another</button>
+                    </div>
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+    </section>
+</section>
