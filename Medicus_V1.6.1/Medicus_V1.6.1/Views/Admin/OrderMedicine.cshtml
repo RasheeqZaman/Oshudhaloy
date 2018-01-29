@@ -1,88 +1,64 @@
-﻿
+﻿@model Medicus_V1._6._1.ViewData.PharmacyOrderMedicineViewData
 @{
-    ViewBag.Title = "Order Medicine";
+    ViewBag.Title = "Admin Order Medicine";
 }
 
 <h2>@ViewBag.Title</h2>
 
 
 
-<section id="main-content">
     <section class="wrapper">
         <div class="row">
             <div class="content-panel">
                 <h3><i class="fa fa-angle-right"></i> Add Puschase</h3>
                 <hr>
-
-
-
-
-
-
-
-                @using (Html.BeginForm("Order", "Admin", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                @using (Html.BeginForm("OrderMedicine", "Admin", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                 {
-
                     <div class="form-group">
-                        <label class="col-sm-2">Medicine Name</label>
+                        @Html.LabelFor(m => m.medicineId, new { @class = "col-sm-2" })
                         <div class="col-sm-4">
-                            <input list="hosting-plan" type="text" class="form-control form-round">
+                            <input class="form-control form-round" id="medicineId" name="medicineId" type="text" list="hosting-plan" />
                             <datalist id="hosting-plan">
-                                <option value="Tablet" />
-                                <option value="Capsule" />
-                                <option value="Syrup" />
+                                @foreach (var i in Model.medicineList)
+                                {
+                                    <option value=@(i.MedicineId)>@(i.Name)</option>
+                                }
                             </datalist>
                         </div>
-                        <label class="col-sm-2">Purchase Date</label>
-                        <div class="col-sm-4"><input type="text" class="form-control form-round" id="inputPassword1"></div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2" for="inputPassword1">Supplier Price</label>
-                        <div class="col-sm-4"><input type="text" class="form-control form-round" id="S"></div>
-                        <label class="col-sm-2" for="inputPassword1">Quantity</label>
-                        <div class="col-sm-4"><input type="text" class="form-control form-round" id="inputPassword1"></div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2">Supplier Name</label>
+                        @Html.LabelFor(m => m.supplierId, new { @class = "col-sm-2" })
                         <div class="col-sm-4">
-                            <input list="hosting-plan" type="text" class="form-control form-round">
-                            <datalist id="hosting-plan">
-                                <option value="Tablet" />
-                                <option value="Capsule" />
-                                <option value="Syrup" />
+                            <input class="form-control form-round" id="supplierId" name="supplierId" type="text" list="hosting-plan-2" />
+                            <datalist id="hosting-plan-2">
+                                @foreach (var i in Model.supplierList)
+                                {
+                                    <option value=@(i.SupplierId)>@(i.UserName)</option>
+                                }
                             </datalist>
                         </div>
-                        <label class="col-sm-2" for="inputPassword1">Invoice Number</label>
-                        <div class="col-sm-4"><input type="text" class="form-control form-round" id="inputPassword1"></div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-2">Category</label>
+                        @Html.LabelFor(m => m.shelf, new { @class = "col-sm-2" })
                         <div class="col-sm-4">
-                            <input list="hosting-plan" type="text" class="form-control form-round">
-                            <datalist id="hosting-plan">
-                                <option value="Tablet" />
-                                <option value="Capsule" />
-                                <option value="Syrup" />
-                            </datalist>
+                            <input class="form-control form-round" id="shelf" name="shelf" type="text" />
+                        </div>
+                        @Html.LabelFor(m => m.quantity, new { @class = "col-sm-2" })
+                        <div class="col-sm-4">
+                            <input class="form-control form-round" id="quantity" name="quantity" type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.expiredDate, new { @class = "col-sm-2" })
+                        <div class="col-sm-4">
+                            <input class="form-control form-round" id="expiredDate" name="expiredDate" type="date" />
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <button type="button" class="btn btn-round btn-theme btn-primary">Save</button>
+                        <button type="submit" class="btn btn-round btn-theme btn-primary">Save</button>
                         <button type="button" class="btn btn-round btn-theme btn-success">Save And Add Another</button>
                     </div>
 
                 }
-
-
-
-                    
-
-
-
-
-
-
 
             </div>
         </div>
@@ -90,4 +66,3 @@
 
 
     </section>
-</section>

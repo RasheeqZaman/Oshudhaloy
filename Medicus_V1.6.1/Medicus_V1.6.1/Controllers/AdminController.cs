@@ -43,7 +43,33 @@ namespace Medicus_V1._6._1.Controllers
         }
         public ActionResult OrderMedicine()
         {
-            return View();
+            var data = new PharmacyOrderMedicineViewData();
+            data.medicineList = db.MedicineTable.ToList();
+            data.supplierList = db.SupplierTable.ToList();
+            return View(data);
+        }
+
+        [HttpPost]
+        public ActionResult OrderMedicine(PharmacyOrderMedicineViewData viewModel)
+        {
+
+            if (ModelState.IsValid)
+            {
+                PharmacyReceived p = new PharmacyReceived
+                {
+                    PharmacyId = Int32.Parse(Session["ID"].ToString()),
+                    SupplierId = viewModel.supplierId,
+                    MedicineId = viewModel.medicineId,
+                    Quantity = viewModel.quantity,
+                    ReceivedDate = DateTime.Today,
+                    ExpireDate = viewModel.expiredDate
+                };
+                db.PharmacyReceivedTable.Add(p);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View(viewModel);
         }
         public ActionResult AllOrder()
         {
