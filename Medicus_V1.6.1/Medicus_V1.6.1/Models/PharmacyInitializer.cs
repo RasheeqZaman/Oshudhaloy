@@ -116,17 +116,17 @@ namespace Medicus_V1._6._1.Models
 
             var customerOrderList = new List<CustomerOrder>
             {
-                new CustomerOrder {CustomerId = 1, MedicineId = 2, Quantity = 10, OrderDate = DateTime.Parse("2017-02-20")},
-                new CustomerOrder {CustomerId = 2, MedicineId = 3, Quantity = 50, OrderDate = DateTime.Parse("2017-06-20")},
-                new CustomerOrder {CustomerId = 3, MedicineId = 2, Quantity = 10, OrderDate = DateTime.Parse("2017-02-20")},
-                new CustomerOrder {CustomerId = 2, MedicineId = 5, Quantity = 50, OrderDate = DateTime.Parse("2017-07-20")},
-                new CustomerOrder {CustomerId = 1, MedicineId = 5, Quantity = 70, OrderDate = DateTime.Parse("2017-02-20")},
-                new CustomerOrder {CustomerId = 2, MedicineId = 5, Quantity = 15, OrderDate = DateTime.Parse("2017-06-28")},
-                new CustomerOrder {CustomerId = 4, MedicineId = 4, Quantity = 25, OrderDate = DateTime.Parse("2017-02-20")},
-                new CustomerOrder {CustomerId = 4, MedicineId = 2, Quantity = 25, OrderDate = DateTime.Parse("2017-02-22")},
-                new CustomerOrder {CustomerId = 5, MedicineId = 2, Quantity = 35, OrderDate = DateTime.Parse("2017-02-25")},
-                new CustomerOrder {CustomerId = 5, MedicineId = 1, Quantity = 20, OrderDate = DateTime.Parse("2017-06-21")},
-                new CustomerOrder {CustomerId = 1, MedicineId = 2, Quantity = 20, OrderDate = DateTime.Parse("2017-03-10")}
+                new CustomerOrder {CustomerId = 1, MedicineId = 2, PharmacyId = 1, Quantity = 10, OrderDate = DateTime.Parse("2017-02-20")},
+                new CustomerOrder {CustomerId = 2, MedicineId = 3, PharmacyId = 3, Quantity = 50, OrderDate = DateTime.Parse("2017-06-20")},
+                new CustomerOrder {CustomerId = 3, MedicineId = 2, PharmacyId = 2, Quantity = 10, OrderDate = DateTime.Parse("2017-02-20")},
+                new CustomerOrder {CustomerId = 2, MedicineId = 5, PharmacyId = 2, Quantity = 50, OrderDate = DateTime.Parse("2017-07-20")},
+                new CustomerOrder {CustomerId = 1, MedicineId = 5, PharmacyId = 1, Quantity = 70, OrderDate = DateTime.Parse("2017-02-20")},
+                new CustomerOrder {CustomerId = 2, MedicineId = 5, PharmacyId = 1, Quantity = 15, OrderDate = DateTime.Parse("2017-06-28")},
+                new CustomerOrder {CustomerId = 4, MedicineId = 4, PharmacyId = 2, Quantity = 25, OrderDate = DateTime.Parse("2017-02-20")},
+                new CustomerOrder {CustomerId = 4, MedicineId = 2, PharmacyId = 1, Quantity = 25, OrderDate = DateTime.Parse("2017-02-22")},
+                new CustomerOrder {CustomerId = 5, MedicineId = 2, PharmacyId = 3, Quantity = 35, OrderDate = DateTime.Parse("2017-02-25")},
+                new CustomerOrder {CustomerId = 5, MedicineId = 1, PharmacyId = 1, Quantity = 20, OrderDate = DateTime.Parse("2017-06-21")},
+                new CustomerOrder {CustomerId = 1, MedicineId = 2, PharmacyId = 3, Quantity = 20, OrderDate = DateTime.Parse("2017-03-10")}
             };
             foreach (var temp in customerOrderList)
             {

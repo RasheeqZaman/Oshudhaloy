@@ -1,36 +1,89 @@
-﻿@model Medicus_V1._6._1.ViewData.HomeIndexViewData
+﻿
 
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "HomePage";
 }
 
-<div class="jumbotron">
-    @foreach (var i in Model.MedicineList)
-    {
-        <h1>@i.Name</h1>
-    }
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<section id="main-content">
+    <section id="wrapper">
+        <div class="first-content">
+            <div class="block-left">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+                <h5>Medicus</h5>
+                <p>
+                    Medicus is a management system website which will help people to find
+                    medicine conveniently and helps the pharmacy stores  manage their
+                    store properly.
+                </p>
+
+            </div>
+            <div class="block-image"></div>
+        </div>
+        <hr/>
+        <div class="mid-content">
+            <h6>Services</h6>
+            <div class="mid-bar">
+                <div class="mini-wrapper">
+                    <h2>Customer buying</h2>
+                    <p>
+                        Customer can locate nearby pharmacy
+                        and order medicine from there
+                    </p>
+                </div>
+                <div class="mini-wrapper">
+                    <h2>Transition manage</h2>
+                    <p>
+                        Pharmacy can easily handle all the transition properly
+                    </p>
+                </div>
+                <div class="mini-wrapper">
+                    <h2>Sales management</h2>
+                    <p>
+                        Sales and purchase can handle eaisly
+                    </p>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <section class="bg-light" id="team">
+            <div class="content-panel">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h6>Our Team</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="team-member">
+                            <img class="rounded-circle" src="~/Content/img6.jpg" width="225" height="225">
+                            <h4>Afrina Zahan Mithila</h4>
+                            <p class="text-muted">Aust CSE 35<sup>th</sup> Batch</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="team-member">
+                            <img class="rounded-circle" src="~/Content/img4.jpg" width="225" height="225" alt="">
+                            <h4>Rasheeq Zaman</h4>
+                            <p class="text-muted">Aust CSE 35<sup>th</sup> Batch</p>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="team-member">
+                            <img class="rounded-circle" src="~/Content/img5.jpg" width="225" height="225" alt="">
+                            <h4>Nahid Pranto</h4>
+                            <p class="text-muted">Aust CSE 35<sup>th</sup> Batch</p>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </section>
+</section>
+
+
+
+

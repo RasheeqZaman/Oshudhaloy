@@ -169,6 +169,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomAccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -193,12 +195,21 @@
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewData\CustomerOrderMedicineViewData.cs" />
     <Compile Include="ViewData\HomeIndexViewData.cs" />
+    <Compile Include="ViewData\PharmacyMedicineViewData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\img2.jpg" />
+    <Content Include="Content\img3.jpg" />
+    <Content Include="Content\img4.jpg" />
+    <Content Include="Content\img5.jpg" />
+    <Content Include="Content\img6.jpg" />
+    <Content Include="Content\immunity-boosters1.jpg" />
+    <Content Include="Content\Vitamins.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -273,9 +284,27 @@
     <Content Include="Views\CustomAccount\CustomLogin.cshtml" />
     <Content Include="Views\CustomAccount\CustomRegisterCustomer.cshtml" />
     <Content Include="Views\CustomAccount\CustomRegisterAdmin.cshtml" />
+    <Content Include="Views\Shared\_SideBar.cshtml" />
+    <Content Include="Views\Admin\DashBoard.cshtml" />
+    <Content Include="Views\Admin\POS.cshtml" />
+    <Content Include="Views\Admin\MedicineList.cshtml" />
+    <Content Include="Views\Admin\AlertStockList.cshtml" />
+    <Content Include="Views\Admin\AllSales.cshtml" />
+    <Content Include="Views\Admin\OrderMedicine.cshtml" />
+    <Content Include="Views\Admin\AllOrder.cshtml" />
+    <Content Include="Views\Admin\TodayReport.cshtml" />
+    <Content Include="Views\Admin\SalesReport.cshtml" />
+    <Content Include="Views\Admin\PurchaseReport.cshtml" />
+    <Content Include="Views\Admin\Staff.cshtml" />
+    <Content Include="Views\Customer\OrderMedicine.cshtml" />
+    <Content Include="Views\Customer\MedicineList.cshtml" />
+    <Content Include="Views\Customer\Dashboard.cshtml" />
+    <Content Include="Views\Customer\NearbyPharmacy.cshtml" />
+    <Content Include="Views\Customer\AllOrders.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="img\makers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

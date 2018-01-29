@@ -1,0 +1,77 @@
+﻿@if (Session["ID"] != null)
+{
+    <aside>
+        <div id="sidebar" class="nav-collapse ">
+            <!-- sidebar menu start-->
+            <ul class="sidebar-menu" id="nav-accordion">
+                <p class="centered"><a href="profile.html"><img src="~/img/customers/@(Session["ID"]).jpg" class="img-circle" width="60"></a></p>
+                <h5 class="centered">@Session["Name"]</h5>
+
+                @{
+                    List<string> side = new List<string>();
+                    List<string> side_link = new List<string>();
+                    List<List<string>> subside = new List<List<string>>();
+                    List<List<string>> subside_link = new List<List<string>>();
+                    string current_user = "";
+
+                    if (Int32.Parse(Session["User"].ToString()) == 2)
+                    {
+
+                        side = new List<string> { "Dashboard", "POS", "Medicine", "All Sales", "Expences", "Reporting", "Staff" };
+                        subside = new List<List<string>> { new List<string> { }, new List<string> { },
+                            new List<string> { "Medicine List", "Alert Stock List" }, new List<string> { },
+                            new List<string> { "Order Medicine", "All Orders"}, new List<string> { "Today's Report", "Sales Report", "Purchase Report"},
+                            new List<string> { } };
+                        side_link = new List<string> { "Dashboard", "POS", "", "AllSales", "", "", "Staff" };
+                        subside_link = new List<List<string>> { new List<string> { }, new List<string> { },
+                            new List<string> { "MedicineList", "AlertStockList" }, new List<string> { },
+                            new List<string> { "OrderMedicine", "AllOrder"}, new List<string> { "TodayReport", "SalesReport", "PurchaseReport"},
+                            new List<string> { } };
+                        current_user = "Admin";
+                    }
+                    else if (Int32.Parse(Session["User"].ToString()) == 1)
+                    {
+                        side = new List<string> { "Dashboard", "Medicine", "All Orders", "Nearby Pharmacy" };
+                        subside = new List<List<string>> { new List<string> { }, new List<string> { "Order Medicine", "Medicine List" }, new List<string> { }, new List<string> { } };
+                        side_link = new List<string> { "Dashboard", "", "AllOrders", "NearbyPharmacy" };
+                        subside_link = new List<List<string>> { new List<string> { }, new List<string> { "OrderMedicine", "MedicineList" }, new List<string> { }, new List<string> { } };
+                        current_user = "Customer";
+                    }
+                }
+
+
+
+
+                @for (int j = 0; j < side.Count; j++)
+                {
+                    if (subside[j].Any())
+                    {
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <i class="fa fa-desktop"></i>
+                                <span>@side[j]</span>
+                            </a>
+                            <ul class="sub">
+                                @for (var i = 0; i < subside[j].Count; i++)
+                                {
+                                    <li><a href="@Url.Action(subside_link[j][i], current_user)">@subside[j][i]</a></li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="mt">
+                            <a href="@Url.Action(side_link[j], current_user)">
+                                <i class="fa fa-dashboard"></i>
+                                <span>@side[j]</span>
+                            </a>
+                        </li>
+                    }
+                }
+
+            </ul>
+            <!-- sidebar menu end-->
+        </div>
+    </aside>
+}

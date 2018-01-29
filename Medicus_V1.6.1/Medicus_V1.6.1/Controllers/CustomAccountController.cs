@@ -28,6 +28,13 @@ namespace Medicus_V1._6._1.Controllers
             return View();
         }
 
+        public ActionResult CustomLogOut()
+        {
+            Session["ID"] = null;
+            Session["Name"] = null;
+
+            return RedirectToAction("Index", "Home");
+        }
 
 
         public ActionResult CustomRegisterCustomer()
@@ -50,6 +57,7 @@ namespace Medicus_V1._6._1.Controllers
                     PhoneNumber = viewModel.PhoneNumber
                 });
                 db.SaveChanges();
+                return RedirectToAction("Index", "Home");
             }
 
             return View(viewModel);
@@ -84,6 +92,8 @@ namespace Medicus_V1._6._1.Controllers
                     PharmacyId = p.PharmacyId
                 });
                 db.SaveChanges();
+
+                return RedirectToAction("Index", "Home");
             }
 
             return View(viewModel);
@@ -96,9 +106,22 @@ namespace Medicus_V1._6._1.Controllers
 
             if (ModelState.IsValid)
             {
-                Customers c = db.CustomerTable.SqlQuery("select * from customers where email = '" + viewModel.Email + "' and password = '" + viewModel.Password + "'").First();
-                Session["ID"] = c.CustomersId;
-                Session["Name"] = c.UserName;
+                Customers c = db.CustomerTable.SqlQuery("select * from customers where email = '" + viewModel.Email + "' and password = '" + viewModel.Password + "'").FirstOrDefault();
+                if (c != null)
+                {
+                    Session["User"] = 1;
+                    Session["ID"] = c.CustomersId;
+                    Session["Name"] = c.UserName;
+                }
+                Admin a = db.AdminTable.SqlQuery("select * from admins where email = '" + viewModel.Email + "' and password = '" + viewModel.Password + "'").FirstOrDefault();
+                if (a != null)
+                {
+                    Session["User"] = 2;
+                    Session["ID"] = a.AdminId;
+                    Session["Name"] = a.UserName;
+                }
+
+                return RedirectToAction("Index", "Home");
             }
 
             return View(viewModel);
