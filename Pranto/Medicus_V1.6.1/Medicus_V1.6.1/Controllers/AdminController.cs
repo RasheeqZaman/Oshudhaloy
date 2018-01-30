@@ -30,13 +30,13 @@ namespace Medicus_V1._6._1.Controllers
         public ActionResult MedicineList()
         {
             PharmacyMedicineViewData data = new PharmacyMedicineViewData();
-            data.medicineList = db.MedicineTable.SqlQuery("select * from medicines").ToList();
+            data.medicineList = db.Database.SqlQuery<MultipleModelInOneClass>("select * from medicines inner join pharmacyreceiveds on medicines.medicineid = pharmacyreceiveds.medicineid order by pharmacyreceiveds.quantity").ToList();
             return View(data);
         }
         public ActionResult AlertStockList()
         {
             AlertStockListViewData data = new AlertStockListViewData();
-            data.stockList= db.Database.SqlQuery("select * from medicines").ToList();
+            data.stockList = db.Database.SqlQuery<MultipleModelInOneClass>("select * from medicines inner join pharmacyreceiveds on medicines.medicineid = pharmacyreceiveds.medicineid order by pharmacyreceiveds.quantity").ToList();
             return View(data);
         }
         public ActionResult AllSales()

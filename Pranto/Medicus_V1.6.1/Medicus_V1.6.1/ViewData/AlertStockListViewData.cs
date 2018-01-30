@@ -9,5 +9,6 @@ namespace Medicus_V1._6._1.ViewData
     public class AlertStockListViewData
     {
         public List<MultipleModelInOneClass> stockList { get; set; }
+
     }
 }

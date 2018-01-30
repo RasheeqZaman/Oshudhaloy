@@ -8,7 +8,7 @@ namespace Medicus_V1._6._1.ViewData
 {
     public class PharmacyMedicineViewData
     {
-        public List<Medicine> medicineList { get; set; }
+        public List<MultipleModelInOneClass> medicineList { get; set; }
 
     }
 }
