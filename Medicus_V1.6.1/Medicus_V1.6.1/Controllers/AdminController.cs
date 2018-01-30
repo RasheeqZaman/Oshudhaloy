@@ -51,12 +51,15 @@ namespace Medicus_V1._6._1.Controllers
         }
         public ActionResult AlertStockList()
         {
-            return View();
+            AlertStockListViewData data = new AlertStockListViewData();
+            data.stockList = db.Database.SqlQuery<MultipleModelInOneClass>("select * from medicines inner join pharmacyreceiveds on medicines.medicineid = pharmacyreceiveds.medicineid order by pharmacyreceiveds.quantity").ToList();
+            return View(data);
         }
         public ActionResult AllSales()
         {
             return View();
         }
+        
         public ActionResult OrderMedicine()
         {
             var data = new PharmacyOrderMedicineViewData();
@@ -89,7 +92,9 @@ namespace Medicus_V1._6._1.Controllers
         }
         public ActionResult AllOrder()
         {
-            return View();
+            AdminAllorderViewData data = new AdminAllorderViewData();
+            data.orderList = db.Database.SqlQuery<MultipleModelInOneClass>("select * from pharmacyreceiveds").ToList();
+            return View(data);
         }
         public ActionResult TodayReport()
         {
@@ -105,6 +110,13 @@ namespace Medicus_V1._6._1.Controllers
             return View();
         }
         public ActionResult Staff()
+        {
+            EmployeeViewData data = new EmployeeViewData();
+            data.employeeList = db.EmployeeTable.SqlQuery("select * from employees").ToList();
+            return View(data);
+        }
+
+        public ActionResult InvoiceInfo()
         {
             return View();
         }

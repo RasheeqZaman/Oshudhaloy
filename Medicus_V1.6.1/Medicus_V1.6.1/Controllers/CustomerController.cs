@@ -40,6 +40,15 @@ namespace Medicus_V1._6._1.Controllers
                 };
                 db.CustomerOrderTable.Add(c);
                 db.SaveChanges();
+
+                CustomerCart cc = new CustomerCart
+                {
+                    CustomerOrderId = c.CustomerOrderId,
+                    CCartId = 1
+                };
+                db.CustomerCartTable.Add(cc);
+                db.SaveChanges();
+
                 return RedirectToAction("Index", "Home");
             }
 
@@ -47,7 +56,9 @@ namespace Medicus_V1._6._1.Controllers
         }
         public ActionResult MedicineList()
         {
-            return View();
+            CustomerMedicineViewData data = new CustomerMedicineViewData();
+            data.medicineList = db.MedicineTable.SqlQuery("select * from medicines").ToList();
+            return View(data);
         }
         public ActionResult Dashboard()
         {
@@ -59,7 +70,9 @@ namespace Medicus_V1._6._1.Controllers
         }
         public ActionResult AllOrders()
         {
-            return View();
+            AllOrderCustomerViewData data = new AllOrderCustomerViewData();
+            data.orderList = db.CustomerOrderTable.SqlQuery("select * from customerorders").ToList();
+            return View(data);
         }
 
     }
