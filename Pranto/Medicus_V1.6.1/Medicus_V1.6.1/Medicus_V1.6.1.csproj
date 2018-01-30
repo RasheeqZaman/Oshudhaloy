@@ -308,6 +308,7 @@
     <Content Include="Views\Customer\Dashboard.cshtml" />
     <Content Include="Views\Customer\NearbyPharmacy.cshtml" />
     <Content Include="Views\Customer\AllOrders.cshtml" />
+    <Content Include="Views\Admin\InvoiceInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

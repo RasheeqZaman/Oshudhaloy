@@ -72,5 +72,9 @@ namespace Medicus_V1._6._1.Controllers
             data.employeeList = db.EmployeeTable.SqlQuery("select * from employees").ToList();
             return View(data);
         }
+        public ActionResult InvoiceInfo()
+        {
+            return View();
+        }
     }
 }
