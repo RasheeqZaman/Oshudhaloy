@@ -195,6 +195,7 @@
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewData\AdminDashBoardViewData.cs" />
     <Compile Include="ViewData\PharmacyOrderMedicineViewData.cs" />
     <Compile Include="ViewData\CustomerOrderMedicineViewData.cs" />
     <Compile Include="ViewData\HomeIndexViewData.cs" />
