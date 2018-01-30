@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Medicus_V1._6._1.ViewData
 {
-    public class MulitipleClass
+    public class MultipleModelInOneClass
     {
         public Medicine medicine { get; set; }
         public Customers customers { get; set; }

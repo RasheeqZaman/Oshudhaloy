@@ -187,7 +187,6 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Medicine.cs" />
-    <Compile Include="Models\MultipleModelInOneClass.cs" />
     <Compile Include="Models\Pharmacy.cs" />
     <Compile Include="Models\PharmacyContext.cs" />
     <Compile Include="Models\PharmacyInitializer.cs" />
@@ -203,7 +202,7 @@
     <Compile Include="ViewData\CustomerOrders.cs" />
     <Compile Include="ViewData\EmployeeViewData.cs" />
     <Compile Include="ViewData\HomeIndexViewData.cs" />
-    <Compile Include="ViewData\MulitipleClass.cs" />
+    <Compile Include="ViewData\MultipleModelInOneClass.cs" />
     <Compile Include="ViewData\PharmacyMedicineViewData.cs" />
   </ItemGroup>
   <ItemGroup>

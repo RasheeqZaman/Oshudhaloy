@@ -20,5 +20,6 @@ namespace Medicus_V1._6._1.Models
         public DbSet<CustomerCart> CustomerCartTable { get; set; }
         public DbSet<PharmacySold> PharmacySoldTable { get; set; }
         
+        
     }
 }
