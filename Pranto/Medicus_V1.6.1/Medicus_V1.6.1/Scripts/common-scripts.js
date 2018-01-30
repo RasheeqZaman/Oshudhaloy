@@ -60,7 +60,7 @@ var Script = function () {
             $("#container").addClass("sidebar-closed");
         } else {
             $('#main-content').css({
-                'margin-left': '210px'
+                'margin': 'auto'
             });
             $('#sidebar > ul').show();
             $('#sidebar').css({

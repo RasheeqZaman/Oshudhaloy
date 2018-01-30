@@ -761,6 +761,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  border:2px solid red;
 }
 
 .container:before,
@@ -7062,7 +7063,7 @@ ul.sidebar-menu li a.active i {
 }
 
 #main-content {
-	margin-left: 210px;
+	margin-left: 100px;
 }
 
 /*Prantor Code*/
