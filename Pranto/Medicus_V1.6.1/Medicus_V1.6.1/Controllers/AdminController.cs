@@ -49,7 +49,9 @@ namespace Medicus_V1._6._1.Controllers
         }
         public ActionResult AllOrder()
         {
-            return View();
+            AdminAllorderViewData data = new AdminAllorderViewData();
+            data.orderList = db.Database.SqlQuery<MultipleModelInOneClass>("select * from pharmacyreceiveds").ToList();
+            return View(data);
         }
         public ActionResult TodayReport()
         {
