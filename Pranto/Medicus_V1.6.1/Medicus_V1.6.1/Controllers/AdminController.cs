@@ -35,7 +35,9 @@ namespace Medicus_V1._6._1.Controllers
         }
         public ActionResult AlertStockList()
         {
-            return View();
+            AlertStockListViewData data = new AlertStockListViewData();
+            //data.stockList=db.MulipleModelClass.SqlQuery("select * from medicines").ToList();
+            return View(data);
         }
         public ActionResult AllSales()
         {
