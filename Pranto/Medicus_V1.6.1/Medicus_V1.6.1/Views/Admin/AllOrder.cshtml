@@ -1,11 +1,11 @@
-﻿@model Medicus_V1._6._1.ViewData.AdminAllorderViewData
+﻿
+@model Medicus_V1._6._1.ViewData.AdminAllorderViewData
 @{
     ViewBag.Title = "All Orders";
 }
 
 <h2>@ViewBag.Title</h2>
 
-<section id="main-content">
     <section class="wrapper">
         <h3><i class="fa fa-angle-right"></i> Manage Medicine</h3>
         <div class="upper-table">
@@ -26,10 +26,10 @@
                         <tr>
                             <th><i class="fa fa-sort-amount-asc" aria-hidden="true"></i> Received Id</th>
                             <th><i class="fa fa-sort-amount-asc" aria-hidden="true"></i> Medicine Name</th>
-                          
+
                             <th><i class="fa fa-sort-amount-asc" aria-hidden="true"></i> Supplier</th>
                             <th><i class="fa fa-sort-amount-asc" aria-hidden="true"></i> Quantity</th>
-                            
+
                             <th><i class="fa fa-sort-amount-asc" aria-hidden="true"></i> Expire Date</th>
                             <th>Action</th>
 
@@ -49,7 +49,7 @@
                                 <td class="hidden-phone">@i.SupplierId</td>
                                 <td class="hidden-phone">@i.Quantity</td>
                                 <td class="hidden-phone">@i.ExpireDate</td>
-                                
+
                                 <td>
                                     <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
                                     <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
@@ -64,5 +64,4 @@
                 </div>
             </div>
         </section>
-    </section>
 

@@ -1,0 +1,57 @@
+﻿@model Medicus_V1._6._1.ViewData.AdminAddStaffViewData
+@{
+    ViewBag.Title = "AddStaff";
+}
+
+<h2>AddStaff</h2>
+<section class="wrapper">
+    <div class="row">
+        <div class="content-panel">
+            <h3><i class="fa fa-angle-right"></i> Add Staff</h3>
+            <hr>
+            @using (Html.BeginForm("AddStaff", "Admin", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(e => e.userName, new { @class = "col-sm-2" })
+                    <div class="col-sm-4">
+                        <input class="form-control form-round" id="userName" name="userName" type="text" />
+                    </div>
+                    @Html.LabelFor(e => e.email, new { @class = "col-sm-2" })
+                    <div class="col-sm-4">
+                        <input class="form-control form-round" id="email" name="email" type="text" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(e => e.phoneNumber, new { @class = "col-sm-2" })
+                    <div class="col-sm-4">
+                        <input class="form-control form-round" id="phoneNumber" name="phoneNumber" type="text" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(e => e.address, new { @class = "col-sm-2" })
+                    <div class="col-sm-4">
+                        <input class="form-control form-round" id="address" name="address" type="text" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(e => e.password, new { @class = "col-sm-2" })
+                    <div class="col-sm-4">
+                        <input class="form-control form-round" id="password" name="password" type="text" />
+                    </div>
+                </div>
+
+
+                <hr>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-round btn-theme btn-primary">Save</button>
+                    <button type="button" class="btn btn-round btn-theme btn-success">Save And Add Another</button>
+                </div>
+
+            }
+
+        </div>
+    </div>
+
+
+
+</section>

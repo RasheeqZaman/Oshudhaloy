@@ -6,17 +6,18 @@
 <h2>@ViewBag.Title</h2>
 
 
-<section id="main-content">
     <section class="wrapper">
         <h3><i class="fa fa-angle-right"></i> Manage Medicine</h3>
         <div class="upper-table">
-            <button type="button" class="btn btn-round"><i class="fa fa-plus-circle"></i>Add Medicine</button>
+            <button type="button" class="btn btn-round" onclick="location.href='@Url.Action("Add Staff", "Admin")'"><i class="fa fa-plus-circle"></i>Add Medicine</button>
             <button type="button" class="btn btn-round"><i class="fa fa-edit"></i> Edit Medicine</button>
             <div class="table-search">
-                <input type="text" class="input-holder" placeholder="Search Medicine">
-                <button type="submit" class="searchButton">
-                    <i class="fa fa-search"></i>
-                </button>
+                @using (Html.BeginForm("Staff", "Admin", FormMethod.Post))
+            {
+                <!--<input type="text" class="input-holder" placeholder="Search Medicine"> -->
+                    @Html.TextBox("keyword")
+                    <input type="submit" class="searchButton">
+                }
             </div>
         </div>
         <div class="col-md-12">
@@ -31,7 +32,7 @@
                             <th><i class="fa fa-sort-amount-asc" aria-hidden="true"></i> Email</th>
                             <th><i class="fa fa-sort-amount-asc" aria-hidden="true"></i> address</th>
                             <th><i class="fa fa-sort-amount-asc" aria-hidden="true"></i> Phone No.</th>
-              
+
                             <th>Action</th>
 
                             <th></th>
@@ -51,7 +52,7 @@
                                 <td class="hidden-phone">@i.Email</td>
                                 <td class="hidden-phone">@i.Address</td>
                                 <td class="hidden-phone">@i.PhoneNumber</td>
-                                
+
                                 <td>
                                     <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
                                     <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
@@ -66,7 +67,6 @@
                 </div>
             </div>
         </section>
-    </section>
 
 
 

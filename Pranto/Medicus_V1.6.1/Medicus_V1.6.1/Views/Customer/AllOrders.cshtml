@@ -1,11 +1,11 @@
-﻿@model Medicus_V1._6._1.ViewData.AllOrderCustomerViewData
+﻿
+@model Medicus_V1._6._1.ViewData.AllOrderCustomerViewData
 @{
     ViewBag.Title = "All Orders";
 }
 
 <h2>@ViewBag.Title</h2>
 
-<section id="main-content">
     <section class="wrapper">
         <h3><i class="fa fa-angle-right"></i> Manage Purchase</h3>
         <div class="upper-table">
@@ -23,7 +23,7 @@
                 <table class="table table-striped table-hover">
                     <h4><i class="fa fa-angle-right"></i> Supplier List</h4>
                     <thead>
-                       
+
                         <tr>
                             <th><i class="fa fa-sort-amount-asc" aria-hidden="true"></i> Invoice no.</th>
                             <th><i class="fa fa-sort-amount-asc" aria-hidden="true"></i> Pharmacy ID</th>
@@ -36,31 +36,27 @@
                     </thead>
                     <tbody>
                         <tr>
-                       @foreach (var i in Model.orderList)
-                       {
-                        <tr>
+                            @foreach (var i in Model.orderList)
+                            {
+                            <tr>
 
-                            <td>@i.CustomerOrderId</td>
+                                <td>@i.CustomerOrderId</td>
 
-                            <td>@i.PharmacyId</td>
-                            <td>@i.Quantity</td>
-                            <td>@i.OrderDate</td>
-                            
+                                <td>@i.PharmacyId</td>
+                                <td>@i.Quantity</td>
+                                <td>@i.OrderDate</td>
 
-                            <td>
-                                <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-                                <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                            </td>
-                        </tr>
-                       }
 
-                    </tbody>
-                </table>
+                                <td>
+                                    <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
+                                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                                </td>
+                            </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-    </section>
-</section>
-
-
-
+        </section>

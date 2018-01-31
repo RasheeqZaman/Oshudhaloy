@@ -21,7 +21,6 @@ namespace Medicus_V1._6._1.Controllers
             var data = new CustomerOrderMedicineViewData();
             data.medicineList = db.MedicineTable.ToList();
             data.pharmacyList = db.PharmacyTable.ToList();
-            
             return View(data);
         }
 
@@ -41,6 +40,15 @@ namespace Medicus_V1._6._1.Controllers
                 };
                 db.CustomerOrderTable.Add(c);
                 db.SaveChanges();
+
+                CustomerCart cc = new CustomerCart
+                {
+                    CustomerOrderId = c.CustomerOrderId,
+                    CCartId = 1
+                };
+                db.CustomerCartTable.Add(cc);
+                db.SaveChanges();
+
                 return RedirectToAction("Index", "Home");
             }
 
@@ -49,14 +57,14 @@ namespace Medicus_V1._6._1.Controllers
         public ActionResult MedicineList()
         {
             CustomerMedicineViewData data = new CustomerMedicineViewData();
-            data.medicineList = db. MedicineTable.SqlQuery("select * from medicines").ToList();
+            data.medicineList = db.MedicineTable.SqlQuery("select * from medicines").ToList();
             return View(data);
         }
-        public ActionResult AllOrders()
+        [HttpPost]
+        public ActionResult MedicineList(string keyword)
         {
-            AllOrderCustomerViewData data = new AllOrderCustomerViewData();
-            
-            data.orderList = db.CustomerOrderTable.SqlQuery("select * from customerorders").ToList();
+            CustomerMedicineViewData data = new CustomerMedicineViewData();
+            data.medicineList = db.MedicineTable.SqlQuery("select * from medicines where name = '" + keyword + "'").ToList();
             return View(data);
         }
         public ActionResult Dashboard()
@@ -67,7 +75,12 @@ namespace Medicus_V1._6._1.Controllers
         {
             return View();
         }
-        
+        public ActionResult AllOrders()
+        {
+            AllOrderCustomerViewData data = new AllOrderCustomerViewData();
+            data.orderList = db.CustomerOrderTable.SqlQuery("select * from customerorders").ToList();
+            return View(data);
+        }
 
     }
 }
