@@ -8,6 +8,8 @@ namespace Medicus_V1._6._1.ViewData
 {
     public class MultipleModelInOneClass
     {
+        public int CustomerOrderId { get; set; }
+        public int CCartId { get; set; }
         public int MedicineId { get; set; }
         public string Name { get; set; }
         public string GenericName { get; set; }

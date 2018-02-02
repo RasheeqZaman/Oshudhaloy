@@ -26,15 +26,15 @@ namespace Medicus_V1._6._1.Controllers
             //data.todaysTotalPurchase = db.Database.SqlQuery<int>("SELECT sum(Medicines.supplierPrice*PharmacyReceiveds.Quantity) FROM PharmacyReceiveds inner join Medicines on Medicines.MedicineId = PharmacyReceiveds.MedicineId inner join Admins on Admins.pharmacyId = CustomerOrders.pharmacyId WHERE Admins.adminId = " + Session["ID"] + " and PharmacyReceiveds.ReceivedDate = '" + DateTime.Today + "'").FirstOrDefault();
             data.todaysTotalPurchase = 0;
             //data.totalMedicine = db.Database.SqlQuery<int>("SELECT SUM(Quantity) FROM PharmacyReceiveds Inner join Admins on Admins.PharmacyId = PharmacyReceiveds.PharmacyId WHERE Admins.adminid = "+Session["ID"]+" and ReceivedDate = '"+DateTime.Today+"'").FirstOrDefault();
-            string check =  db.Database.SqlQuery<int?>("SELECT SUM(Quantity) FROM PharmacyReceiveds where PharmacyId = 15").FirstOrDefault().ToString();
-            if (check == null)
+            //string check =  db.Database.SqlQuery<int?>("SELECT SUM(Quantity) FROM PharmacyReceiveds where PharmacyId = 15").FirstOrDefault().ToString();
+            /*if (check == null)
             {
                 data.totalMedicine = 0;
             }else
             {
                 data.totalMedicine = Int32.Parse(check);
-            }
-            //data.totalMedicine = 0;
+            }*/
+            data.totalMedicine = 0;
             return View(data);
         }
 
@@ -46,13 +46,30 @@ namespace Medicus_V1._6._1.Controllers
         public ActionResult MedicineList()
         {
             PharmacyMedicineViewData data = new PharmacyMedicineViewData();
-            data.medicineList = db.MedicineTable.SqlQuery("select * from medicines").ToList();
+            data.multipleModelList = db.Database.SqlQuery<MultipleModelInOneClass>("select * from medicines inner join pharmacyreceiveds on medicines.medicineid = pharmacyreceiveds.medicineid").ToList();
             return View(data);
         }
+
+        [HttpPost]
+        public ActionResult MedicineList(string keyword)
+        {
+            PharmacyMedicineViewData data = new PharmacyMedicineViewData();
+            data.multipleModelList = db.Database.SqlQuery<MultipleModelInOneClass>("select * from medicines inner join pharmacyreceiveds on medicines.medicineid = pharmacyreceiveds.medicineid where name = '" + keyword + "' ").ToList();
+            return View(data);
+        }
+
         public ActionResult AlertStockList()
         {
             AlertStockListViewData data = new AlertStockListViewData();
             data.stockList = db.Database.SqlQuery<MultipleModelInOneClass>("select * from medicines inner join pharmacyreceiveds on medicines.medicineid = pharmacyreceiveds.medicineid order by pharmacyreceiveds.quantity").ToList();
+            return View(data);
+        }
+
+        [HttpPost]
+        public ActionResult AlertStockList(string keyword)
+        {
+            AlertStockListViewData data = new AlertStockListViewData();
+            data.stockList = db.Database.SqlQuery<MultipleModelInOneClass>("select * from medicines inner join pharmacyreceiveds on medicines.medicineid = pharmacyreceiveds.medicineid where name = '" + keyword + "'order by pharmacyreceiveds.quantity").ToList();
             return View(data);
         }
         public ActionResult AllSales()
@@ -116,9 +133,58 @@ namespace Medicus_V1._6._1.Controllers
             return View(data);
         }
 
+        [HttpPost]
+        public ActionResult Staff(string keyword)
+        {
+            EmployeeViewData data = new EmployeeViewData();
+            data.employeeList = db.EmployeeTable.SqlQuery("select * from employees where username = '" + keyword + "'").ToList();
+            return View(data);
+        }
+
         public ActionResult InvoiceInfo()
         {
             return View();
+        }
+
+        public ActionResult CustomerInfo()
+        {
+            CustomerInfoViewData data = new CustomerInfoViewData();
+            data.customerList = db.CustomerTable.SqlQuery("Select * from customers").ToList();
+            return View(data);
+        }
+        [HttpPost]
+        public ActionResult CustomerInfo(string keyword)
+        {
+            CustomerInfoViewData data = new CustomerInfoViewData();
+            data.customerList = db.CustomerTable.SqlQuery("select * from customers where username = '" + keyword + "'").ToList();
+            return View(data);
+        }
+
+        public ActionResult AddMedicine()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddMedicine(AdminAddMedicineViewData viewModel)
+        {
+
+            if (ModelState.IsValid)
+            {
+                Medicine m = new Medicine
+                {
+                    SellPrice = viewModel.sellPrice,
+                    SupplierPrice = viewModel.supplierPrice,
+                    Name = viewModel.medicineName,
+                    Catagory = viewModel.category,
+                    Details = viewModel.details,
+                    GenericName = viewModel.genericName
+                };
+                db.MedicineTable.Add(m);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View(viewModel);
         }
     }
 }

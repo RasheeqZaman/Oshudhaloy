@@ -11,6 +11,7 @@ namespace Medicus_V1._6._1.ViewData
     {
         public List<Medicine> medicineList { get; set; }
         public List<Pharmacy> pharmacyList { get; set; }
+        public List<MultipleModelInOneClass> allList { get; set; }
 
         [Required]
         [Display(Name = "Medicine Name")]

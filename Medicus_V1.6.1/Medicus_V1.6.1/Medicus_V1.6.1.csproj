@@ -195,10 +195,12 @@
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewData\AdminAddMedicineViewData.cs" />
     <Compile Include="ViewData\AdminAllorderViewData.cs" />
     <Compile Include="ViewData\AdminDashBoardViewData.cs" />
     <Compile Include="ViewData\AlertStockListViewData.cs" />
     <Compile Include="ViewData\AllOrderCustomerViewData.cs" />
+    <Compile Include="ViewData\CustomerInfoViewData.cs" />
     <Compile Include="ViewData\CustomerMedicineViewData.cs" />
     <Compile Include="ViewData\EmployeeViewData.cs" />
     <Compile Include="ViewData\MultipleModelInOneClass.cs" />
@@ -310,6 +312,8 @@
     <Content Include="Views\Customer\NearbyPharmacy.cshtml" />
     <Content Include="Views\Customer\AllOrders.cshtml" />
     <Content Include="Views\Admin\InvoiceInfo.cshtml" />
+    <Content Include="Views\Admin\AddMedicine.cshtml" />
+    <Content Include="Views\Admin\CustomerInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

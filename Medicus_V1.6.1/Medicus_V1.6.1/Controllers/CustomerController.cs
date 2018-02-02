@@ -11,6 +11,8 @@ namespace Medicus_V1._6._1.Controllers
     public class CustomerController : Controller
     {
         PharmacyContext db = new PharmacyContext();
+        List<CustomerOrder> colist = new List<CustomerOrder>();
+        int i = 1;
         // GET: Customer
         public ActionResult Index()
         {
@@ -21,6 +23,7 @@ namespace Medicus_V1._6._1.Controllers
             var data = new CustomerOrderMedicineViewData();
             data.medicineList = db.MedicineTable.ToList();
             data.pharmacyList = db.PharmacyTable.ToList();
+            data.allList = new List<MultipleModelInOneClass>();
             return View(data);
         }
 
@@ -30,14 +33,24 @@ namespace Medicus_V1._6._1.Controllers
 
             if (ModelState.IsValid)
             {
-                CustomerOrder c = new CustomerOrder
+
+                /*CustomerOrder c = new CustomerOrder
                 {
                     CustomerId = Int32.Parse(Session["ID"].ToString()),
                     MedicineId = viewModel.medicineId,
                     PharmacyId = viewModel.pharmacyId,
                     Quantity = viewModel.quantity,
                     OrderDate = DateTime.Today
-                };
+                };*/
+
+                CustomerOrder c = new CustomerOrder();
+                c.CustomerId = Int32.Parse(Session["ID"].ToString());
+                c.MedicineId = viewModel.medicineId;
+                c.PharmacyId = viewModel.pharmacyId;
+                c.Quantity = viewModel.quantity;
+                c.OrderDate = DateTime.Today;
+
+
                 db.CustomerOrderTable.Add(c);
                 db.SaveChanges();
 
@@ -49,15 +62,40 @@ namespace Medicus_V1._6._1.Controllers
                 db.CustomerCartTable.Add(cc);
                 db.SaveChanges();
 
-                return RedirectToAction("Index", "Home");
-            }
+                Medicine m = db.MedicineTable.Find(c.MedicineId);
 
-            return View(viewModel);
+                //viewModel.allList = new List<MultipleModelInOneClass>();
+                viewModel.allList.Add(new MultipleModelInOneClass {
+                    CCartId = cc.CCartId,
+                    CustomerOrderId = c.CustomerOrderId,
+                    Name = m.Name,
+                    Quantity = c.Quantity,
+                    SellPrice = m.SellPrice
+                });
+
+                return View(viewModel);
+            }
+            return RedirectToAction("Index", "Home");
         }
+
+        public ActionResult GetData(int model)
+        {
+            return View(model);
+        }
+
+
         public ActionResult MedicineList()
         {
             CustomerMedicineViewData data = new CustomerMedicineViewData();
             data.medicineList = db.MedicineTable.SqlQuery("select * from medicines").ToList();
+            return View(data);
+        }
+
+        [HttpPost]
+        public ActionResult MedicineList(string keyword)
+        {
+            CustomerMedicineViewData data = new CustomerMedicineViewData();
+            data.medicineList = db.MedicineTable.SqlQuery("select * from medicines where name = '" + keyword + "'").ToList();
             return View(data);
         }
         public ActionResult Dashboard()
