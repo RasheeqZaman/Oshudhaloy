@@ -109,7 +109,7 @@ namespace Medicus_V1._6._1.Controllers
         public ActionResult AllOrders()
         {
             AllOrderCustomerViewData data = new AllOrderCustomerViewData();
-            data.orderList = db.CustomerOrderTable.SqlQuery("select * from customerorders").ToList();
+            data.orderList = db.Database.SqlQuery<MultipleModelInOneClass>("select * from customerorders inner join pharmacies on pharmacies.pharmacyid = customerorders.pharmacyid").ToList();
             return View(data);
         }
 

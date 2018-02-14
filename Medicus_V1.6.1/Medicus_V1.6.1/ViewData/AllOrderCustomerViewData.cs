@@ -8,6 +8,7 @@ namespace Medicus_V1._6._1.ViewData
 {
     public class AllOrderCustomerViewData
     {
-        public List<CustomerOrder> orderList { get; set; }
+        public List<MultipleModelInOneClass> orderList { get; set; }
+
     }
 }

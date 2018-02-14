@@ -110,6 +110,7 @@ namespace Medicus_V1._6._1.Controllers
                 if (c != null)
                 {
                     Session["User"] = 1;
+                    Session["UserName"] = "customers";
                     Session["ID"] = c.CustomersId;
                     Session["Name"] = c.UserName;
                 }
@@ -117,6 +118,7 @@ namespace Medicus_V1._6._1.Controllers
                 if (a != null)
                 {
                     Session["User"] = 2;
+                    Session["UserName"] = "admin";
                     Session["ID"] = a.AdminId;
                     Session["Name"] = a.UserName;
                 }

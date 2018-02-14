@@ -4,7 +4,7 @@
         <div id="sidebar" class="nav-collapse ">
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
-                <p class="centered"><a href="profile.html"><img src="~/img/customers/@(Session["ID"]).jpg" class="img-circle" width="60"></a></p>
+                <p class="centered"><a href="profile.html"><img src="~/img/@(Session["UserName"])/@(Session["ID"]).jpg" class="img-circle" width="60"></a></p>
                 <h5 class="centered">@Session["Name"]</h5>
 
                 @{

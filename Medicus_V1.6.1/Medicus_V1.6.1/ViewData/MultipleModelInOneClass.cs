@@ -34,6 +34,11 @@ namespace Medicus_V1._6._1.ViewData
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
 
+        
+        public int CustomerId { get; set; }
+        public DateTime OrderDate { get; set; }
+
+
 
     }
 }
