@@ -212,8 +212,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\font-awesome.css" />
     <Content Include="Content\img2.jpg" />
+    <Content Include="Content\font-awesome.css" />
     <Content Include="Content\img3.jpg" />
     <Content Include="Content\img4.jpg" />
     <Content Include="Content\img5.jpg" />
@@ -237,6 +237,9 @@
     <Content Include="fonts\GreatVibes-Regular.ttf" />
     <Content Include="fonts\Reality Sunday.ttf" />
     <Content Include="fonts\SouthernAire_Personal_Use_Only.ttf" />
+    <Content Include="fonts\Organo.ttf" />
+    <Content Include="fonts\Mukti_1.99_PR.ttf" />
+    <Content Include="fonts\Traffolight.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\common-scripts.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

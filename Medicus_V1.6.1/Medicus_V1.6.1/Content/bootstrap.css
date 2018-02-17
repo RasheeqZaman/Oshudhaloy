@@ -400,10 +400,6 @@ hr {
   border: 0;
 }
 
-p {
-  margin: 0 0 10px;
-}
-
 .lead {
   margin-bottom: 20px;
   font-size: 16.099999999999998px;
@@ -2416,8 +2412,22 @@ input[type="button"].btn-block {
 }
 
 @font-face {
+	font-family: 'Organo';
+	src: url('../fonts/Organo.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Mukti_1.99_PR';
+	src: url('../fonts/Mukti_1.99_PR.ttf') format('truetype');
+}
+
+@font-face {
 	font-family: 'GreatVibes-Regular';
 	src: url('../fonts/GreatVibes-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Traffolight';
+	src: url('../fonts/Traffolight.otf') format('opentype');
 }
 .glyphicon {
   position: relative;
@@ -7061,9 +7071,6 @@ ul.sidebar-menu li a.active i {
 	font-size: 20px;
 }
 
-#main-content {
-	margin-left: 210px;
-}
 
 /*Prantor Code*/
 
@@ -7117,59 +7124,77 @@ ul.sidebar-menu li a.active i {
 	color:#ffffff; 
 	background-color:#999;
 }
-.first-content
+.block-content
 {
 	height:400px;
-  
 }
+
 .block-left
 {
 	width:50%;
 	height:100%;
-	text-align:center;
-	font-size:24px;
 	float:left;
-	background-color:#eeeeee;
+	background-color:#eee;
+	padding:80px;
 }
-.block-left h5
+
+.block-content > h5 , .mid-bar > h5
 {
-	font-size:50px;
-	line-height:50px;
+	color:blue;
+	text-align:center;
+}
+
+h5
+{
+	font-size:40px;
+	font-weight:bold;
+	font-family:Traffolight;
 	vertical-align:middle;
 }
-.block-left p
+
+h4
 {
-	font-size:20px;
+	font-size:30px;
+	font-family:Mukti_1.99_PR;
 	vertical-align:middle;
 }
+
+p
+{
+	padding: 20px 0px;
+	font-size:16px;
+	vertical-align:middle;
+}
+
+
+button
+{
+	display:block;
+	margin:auto;
+	border:2px solid black;
+	border-radius: 15px;
+	padding:8px;
+}
+
 .block-image
 {
    
 	background-size: cover;
 	background-position: center;
-	background-image: url(/Content/img3.jpg);
+	background-image: url(/Content/img2.jpg);
 	overflow:hidden;
 	width:50%;
 	height:100%;
    
 }
 
-.mid-content
-{
-   height: 300px;
-   text-align:center;
-   margin-top:30px;
-   
-}
-.mid-content h6
-{
-	font-size:50px;
-}
+
 .mid-bar
 {
 	height:80%;
 	width:100%;
 }
+
 .mid-bar > .mini-wrapper
 {
 	width: 350px;
